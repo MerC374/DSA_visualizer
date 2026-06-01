@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>DSA Visualizer</h1>
+    <p class="subtitle">Watch sorting algorithm come to life</p>
+
+    <!-- Controls -->
+    <div class="controls">
+        <select id="algoSelect">
+            <option value="bubble">Bubble Sort</option>
+            <option value="insertion">Insertion Sort</option>
+            <option value="selection">Selection Sort</option>
+            <option value="quick">Quick Sort</option>
+        </select>
+
+        <button id="sortBtn" onclick="startSort()">▶ Sort</button>
+        <button id="resetBtn" onclick="resetArray()">↺ New Array</button>
+
+        <div class="speed-control">
+            <span>Speed</span>
+            <input type="range" id="speedSlider" min="1" max="10" value="5">
+            <span>Fast</span>
+        </div>
+    </div>
+
+    <!-- Info Bar -->
+    <div class="info-bar">
+        <div class="info-item">
+            <div class="info-label">Algorithm</div>
+            <div class="info-value" id="algoName">Bubble Sort</div>
+        </div>
+
+        <div class="info-item">
+            <div class="info-label">Time Complexity</div>
+            <div class="info-value" id="complexity">O(n²)</div>
+        </div>
+
+        <div class="info-item">
+            <div class="info-label">Comaparisons</div>
+            <div class="info-value" id="compCount">0</div>
+        </div>
+
+        <div class="info-item">
+            <div class="info-label">Swaps</div>
+            <div class="info-value" id="swapCount">0</div>
+        </div>
+    </div>
+
+    <!-- Vizualizer -->
+    <div class="visualizer">
+        <div class="bars-container" id="barsContainer"></div>
+        <div class="status" id="status">Press Sort to start</div>
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #6366f1;"></div>
+                <span>Unsorted</span>
+            </div>
+
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #f59e0b;"></div>
+                <span>Comparing</span>
+            </div>
+
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #ef4444;"></div>
+                <span>Swapping</span>
+            </div>
+
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #10b981;"></div>
+                <span>Sorted</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="visualizer.js"></script>
+
+</body>
+</html>
